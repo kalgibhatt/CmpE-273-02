@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>JavaScript Conditions</title>
+
+<script type="text/javascript">
+
+function display() {
+
+var currentDate = new Date();
+
+if(currentDate.getHours() >= 6 && currentDate.getHours() < 12)
+	{
+	document.getElementById("greeting").innerHTML = "GOOD MORNING";
+	document.getElementById("DateTime").innerHTML = currentDate;
+	}
+else if(currentDate.getHours() >=12 && currentDate.getHours() < 16)
+	{
+	document.getElementById("greeting").innerHTML = "GOOD AFTERNOON";
+	document.getElementById("DateTime").innerHTML = currentDate;
+	}
+else if(currentDate.getHours() >= 16 && currentDate.getHours() < 19)
+	{
+	document.getElementById("greeting").innerHTML = "GOOD EVENING";
+	document.getElementById("DateTime").innerHTML = currentDate;
+	}
+else if((currentDate.getHours() >= 19 && currentDate.getHours() < 24) || currentDate.getHours() == 0)
+	{
+	document.getElementById("greeting").innerHTML = "GOOD NIGHT";
+	document.getElementById("DateTime").innerHTML = currentDate;
+	}
+else if (currentDate.getHours() >= 1 && currentDate.getHours() < 6)
+	{
+	document.getElementById("greeting").innerHTML = "IT's MIDNIGHT. PLEASE GO TO BED. GOOD NIGHT";
+	document.getElementById("DateTime").innerHTML = currentDate;
+	}
+else
+	document.getElementById("greeting").innerHTML = "Hello, How are you?";	
+ }
+</script>
+</head>
+
+<style>
+
+h1,h3 {
+    margin-left: 40px;
+} 
+
+.button{
+	font-weight: bold;
+	font-size: 14px;
+	border-radius: 8px;
+	margin-left: 5px;
+	margin-right: 5px;
+	background-color: yellow;
+}
+</style>
+
+<body>
+
+<div align = "center">
+<h1>JavaScript Conditions</h1>
+<button type="button" class="button" value="Current DateTime" onclick="display();">Click here to see the current Date and Time</button> 
+<h2 id="greeting"></h2>
+<h3 id="DateTime"></h3>
+</div>
+
+</body>
+</html>

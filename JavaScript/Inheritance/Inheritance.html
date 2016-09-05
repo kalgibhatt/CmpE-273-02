@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>JavaScript Inheritance</title>
+
+<script type="text/javascript">
+  function Inheritance(a, b)
+  {
+    for (obj in b)
+    {
+      a[obj]=b[obj];
+    }
+  }
+
+  function Shape(Position)
+  {
+    this.constructor.prototype.getPosition= function() 
+    {
+    	return Position; 
+    }
+    this.constructor.prototype.setPosition= function(p)
+    {
+    	return Position=p;
+    }
+  }
+  
+  function Rectangle(Position, Length, Width) 
+  {
+    Inheritance(this.constructor.prototype, new Shape(Position));
+    this.constructor.prototype.getLength= function()
+    {
+    	return Length;
+    }
+    this.constructor.prototype.getWidth= function()
+    {
+    	return Width;
+    }
+    this.constructor.prototype.getArea=function()
+    {
+    	return Width*Length;
+    }
+  }
+  
+  function Cuboid(Position,Length, Width, Height)
+  {
+    Inheritance(this.constructor.prototype, new Rectangle(Position,Length, Width));
+    this.constructor.prototype.getHeight= function() 
+    {
+    	return Height; 
+    }
+    this.constructor.prototype.getVolume=function()
+    {
+      return this.getArea()*Height;
+    }
+  }
+   
+  var cuboid= new Cuboid([4,3],10,5,7);
+  
+  var rectangle= new Rectangle([41,23],110,25);
+
+</script>
+</head>
+
+<body>
+	<div>
+		<h1 id="myheading"></h1>
+		<h3 id="inheritance"></h3>
+		
+		<p id="rectangle"></p>
+		<ul>
+			<li>Length : 110</li>
+			<li>Width : 25</li>
+			<li>Position : [41,23]</li>
+		</ul>
+		<p id="recPosition"></p>
+		<p id="recArea"></p>
+		
+		<p id="cuboid"></p>
+		<ul>
+			<li>Length : 10</li>
+			<li>Width : 5</li>
+			<li>Height : 7</li>
+			<li>Position : [4,3]</li>
+		</ul>
+		<p id="position"></p>
+		<p id="area"></p>
+		<p id="volume"></p>
+		
+		<p id="instance1"></p>
+		<p id="instance2"></p>
+		
+		<h3 id="details"></h3>
+		
+	</div>
+	
+	<script type="text/javascript">
+	
+	document.getElementById("myheading").innerHTML = "JavaScript Inheritance";
+	document.getElementById("inheritance").innerHTML = "Here Position, Length and Width dimensions of Rectangle function are inherited in Cuboid function.";
+	
+	document.getElementById("rectangle").innerHTML = "The dimensions for cuboid are as follows:";
+	document.getElementById("recPosition").innerHTML = "Position of Rectangle is : [" + rectangle.getPosition() + "]";
+	document.getElementById("recArea").innerHTML = "Area of Rectangle is : " + rectangle.getArea();
+	
+	document.getElementById("cuboid").innerHTML = "The dimensions for cuboid are as follows:";
+	document.getElementById("position").innerHTML = "Position of Cuboid is : [" + cuboid.getPosition() + "]";
+	document.getElementById("area").innerHTML = "Area of Cuboid is : " + cuboid.getArea();
+	document.getElementById("volume").innerHTML = "Volume of Cuboid is : " + cuboid.getVolume();	
+	
+	document.getElementById("instance1").innerHTML = "Is cuboid instance of Shape ? - Answer:  " + (cuboid instanceof Shape);	
+	document.getElementById("instance2").innerHTML = "Is cuboid instance of Rectangle ? - Answer:  " + (cuboid instanceof Rectangle);	
+	
+	document.getElementById("details").innerHTML = "Here Cuboid inherits Position dimension from Shape() and Length and Rectangle dimension from Rectangle(). But objects will not be an instance of the object it inherits. Thus it will return false.";	
+	
+	</script>
+</body>
+</html>

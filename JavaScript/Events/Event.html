@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>JavaScript Events</title>
+<script>
+
+	function change()
+	{
+		var image = document.getElementById("coin");
+		if(Math.random()>0.5)
+		{
+			image.src = "https://upload.wikimedia.org/wikipedia/commons/0/0a/George_Washington_Presidential_$1_Coin_obverse.png";
+			document.getElementById("detail").innerHTML = "It is a HEAD"; 
+		}
+		else
+		{
+			image.src = "https://upload.wikimedia.org/wikipedia/commons/8/87/LineartPresRev.png";
+			document.getElementById("detail").innerHTML = "&nbsp;It is a TAIL"; 
+		}
+	}
+
+</script>
+</head>
+<body>
+
+	<img alt="Coin Flipper" src="https://upload.wikimedia.org/wikipedia/commons/8/87/LineartPresRev.png" id="coin" width=190 height=190 onclick="change();">
+	<p>Toss the coin to see your random result</p>
+	<p id="detail"></p>
+</body>
+</html>

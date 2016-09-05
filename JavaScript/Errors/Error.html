@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>JavScript Errors</title>
+
+<script type="text/javascript">
+
+function calculate()
+{
+    var name = document.getElementById('N').value;
+    var roll = document.getElementById('R').value;
+	var m1 = document.getElementById('m1').value;
+    var m2 = document.getElementById('m2').value;
+    var m3 = document.getElementById('m3').value;
+    var total;
+    var avg;
+    var nameValidation = new RegExp("[a-zA-Z\-'\s]+");
+    var idValidation = new RegExp("^[0-9]{9}$");
+    var marksValidation = new RegExp("^[0-9]+$");
+    
+   	try
+   	{
+   		document.getElementById("demo").innerHTML = "";
+   		if(name.match(nameValidation) != name)
+   		{
+   			throw "Enter a valid Name";
+   		}
+   		else if(roll.match(idValidation) != roll || roll == "")
+   		{
+   			throw "Enter a valid Roll Number";
+   		}
+   		else if(m1.match(marksValidation) == null || m1 == "" || m1 >= 100)
+   		{
+   			throw "Enter marks between 1 - 100";
+   		}
+   		else if(m2.match(marksValidation) == null || m2 == "" || m2 >= 100)
+   		{
+   			throw "Enter marks between 1 - 100";
+   		}
+   		else if(m3.match(marksValidation) == null || m3 == "" || m3 >= 100)
+   		{
+   			throw "Enter marks between 1 - 100";
+   		}
+   		else
+   		{
+   	    	total = parseInt(m1) + parseInt(m2) + parseInt(m3);
+   			avg = total/3;
+   	    	var mark = "Avg = " + avg + "<br> Total = " + total;
+   	    	document.getElementById("result").innerHTML = mark;
+   		}
+   	}
+   	catch(err)
+   	{
+   		document.getElementById("demo").innerHTML = "Error : "+err;
+   	} 
+}
+
+</script>
+</head>
+
+<body>
+	<h1>JavaScript Errors</h1>
+	<p>Enter name of the student : <input type ="text" placeholder ="Name" id="N"></p>
+	<p>Enter roll number of the student : <input type ="text" placeholder ="Roll Number" id="R"></p>
+	<p>Enter marks of TEST-1 : <input type ="text" placeholder ="Marks1" id="m1"></p>
+	<p>Enter marks of TEST-2 : <input type ="text" placeholder ="Marks2" id="m2"></p>
+	<p>Enter marks of TEST-3 : <input type ="text" placeholder ="Marks3" id="m3"></p>
+	<input type='button' value='calculate' onclick="calculate()">
+    <br>
+    <p id="demo"></p>
+    <p id='result'></p>   
+</body>
+</html>

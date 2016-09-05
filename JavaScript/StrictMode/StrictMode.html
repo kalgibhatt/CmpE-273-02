@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Demonstrating Strict Mode</title>
+
+<script type="text/javascript">
+
+function reset() 
+{    
+	document.getElementById("value1").value = "";
+	document.getElementById("displayresult").value=" ";
+}
+
+"use strict";
+function stricttest()
+{
+	testdata = document.getElementById("value1");
+	alert("Strict mode declared, Kindly Declare the variable.");
+}
+   
+</script>
+</head>
+
+<style>
+h1,h3 {
+    color: #2E3884;
+    margin-left: 40px;
+} 
+
+button{
+	margin-left: 5px;
+	margin-right: 5px;
+}
+</style>
+
+<body>
+<div align = "Center">
+<h1>Assignment 1 Javascript - Strict Mode</h1>
+Enter a value:
+ <input type="text" name="value1" id="value1"><br>
+<br><input type="button" name="clickbtn" value="Submit" onclick="stricttest()">
+<input type="button" name="clickbtn" value="Reset" onclick="reset()">
+</div>
+</body>
+
+</html>

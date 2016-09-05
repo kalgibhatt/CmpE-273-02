@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>JavaScript Arrays</title>
+<script>
+
+var colors = new Array("red", "blue", "green", "yellow","orange","pink","purple");
+
+function fillColor(selection)
+{
+	document.getElementById("target").style.backgroundColor = colors[selection];
+} 
+
+</script>
+<style type="text/css">
+div.circle {
+	border: 3px solid black;
+	border-radius: 50%;
+	width: 100px;
+	height: 100px;
+}
+</style>
+</head>
+<body>
+	<h2><p>Select the color to fill in the circle</p></h2>
+	<div>
+		<div>
+			<table style="float:left;">
+				<tr>
+					<td><input type="radio" name="color" value="Red" onclick="fillColor(0);" style="float: left;" /></td>
+					<td><h2 style="background-color: red; width: 150px; height: 25px; float: left;">Red Color</h2></td>
+				</tr>
+				<tr>
+					<td><input type="radio" name="color" value="Blue" onclick="fillColor(1);" style="float: left;" /></td>
+					<td><h2 style="background-color: blue; width: 150px; height: 25px; float: left;">Blue Color</h2></td>
+				</tr>
+				<tr>
+					<td><input type="radio" name="color" value="Green" onclick="fillColor(2);" style="float: left;" /></td>
+					<td><h2 style="background-color: green; width: 150px; height: 25px; float: left;">Green Color</h2></td>
+				</tr>
+				<tr>
+					<td><input type="radio" name="color" value="Yellow" onclick="fillColor(3);" style="float: left;" /></td>
+					<td><h2 style="background-color: yellow; width: 150px; height: 25px; float: left;">Yellow Color</h2></td>
+				</tr>
+				<tr>
+					<td><input type="radio" name="color" value="Orange" onclick="fillColor(4);" style="float: left;" /></td>
+					<td><h2 style="background-color: orange; width: 150px; height: 25px; float: left;">Orange Color</h2></td>
+				</tr>
+				<tr>
+					<td><input type="radio" name="color" value="Pink" onclick="fillColor(5);" style="float: left;" /></td>
+					<td><h2 style="background-color: pink; width: 150px; height: 25px; float: left;">Pink Color</h2></td>
+				</tr>
+				<tr>
+					<td><input type="radio" name="color" value="Purple" onclick="fillColor(6);" style="float: left;" /></td>
+					<td><h2 style="background-color: purple; width: 150px; height: 25px; float: left;">Purple Color</h2></td>
+				</tr>
+			</table>
+		</div>
+		<div style="padding-left: 20em;">
+			<div class="circle" id="target"></div>
+		</div>
+	</div>	
+</body>
+</html>

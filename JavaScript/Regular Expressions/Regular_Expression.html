@@ -1,0 +1,81 @@
+<!DOCTYPE html>  
+<html lang="en">  
+<head>  
+<meta charset="utf-8">  
+<title>JavaScript Regular Expressions</title>        
+<script type="text/javascript">
+
+function check()
+{
+	var number = document.getElementById("num").value;
+    var visa_re = new RegExp("^(?:4[0-9]{12}(?:[0-9]{3})?)$");
+    var mastercard_re = new RegExp("^(?:5[1-5][0-9]{14})$");
+    var americanExpress_re = new RegExp("^(?:3[47][0-9]{13})$");
+    var discover_re = new RegExp("^(?:6(?:011|5[0-9][0-9])[0-9]{12})$");
+    var diners_re = new RegExp("^(?:3(?:0[0-5]|[68][0-9])[0-9]{11})$");
+    var visaElectron_re = new RegExp("^(?:(?:2131|1800|35\d{3})\d{11})$");
+    
+    if(number.match(visa_re) != null)
+    {
+    	document.getElementById("card").innerHTML = "This is a VISA credit card.";	
+    	document.getElementById('visa').style.visibility="visible";
+    }
+
+    // Mastercard
+    else if(number.match(mastercard_re) != null)
+    {
+    	document.getElementById("card").innerHTML = "This is a MASTERCARD credit card.";
+    	document.getElementById('mastercard').style.visibility="visible";
+    }
+    
+    // American Express
+    else if(number.match(americanExpress_re) != null)
+    {
+    	document.getElementById("card").innerHTML = "This is an AMERICAN EXPRESS credit card.";
+    	document.getElementById('americanExpress').style.visibility="visible";
+    }
+    
+    // Discover
+    else if(number.match(discover_re) != null)
+    {
+    	document.getElementById("card").innerHTML = "This is a DISCOVER credit card.";
+    	document.getElementById('discover').style.visibility="visible";
+    }
+    
+    // Diners
+    else if(number.match(diners_re) != null)
+    {
+    	document.getElementById("card").innerHTML = "This is a DINERS credit card.";
+    	document.getElementById('diners').style.visibility="visible";
+    }
+    
+    // Visa Electron
+    else if(number.match(visaElectron_re) != null)
+    {
+    	document.getElementById("card").innerHTML = "This is a VISA ELECTRON credit card.";
+    	document.getElementById('visaElectron').style.visibility="visible";
+    }
+   
+    else
+    {
+    	alert("Enter a valid Credit Card Number");
+    	location.reload();
+    	return false;
+    }
+}
+</script>
+</head>
+<body>
+	<h1>JavaScript Regular Expressions</h1>
+	<p>Enter the Credit Card Number : <input type ="text" placeholder ="Credit Card Number" id="num"></p>
+	<input type="button" value="Check" onclick="check();" />
+	<img id="visa" align="top" src="http://www.credit-card-logos.com/images/visa_credit-card-logos/visa_logo_6.gif" width="40" height="30" style="visibility:hidden"/>
+	<img id="mastercard" src="http://www.credit-card-logos.com/images/mastercard_credit-card-logos/mastercard_logo_5.gif" width="40" height="30" style="visibility:hidden"/>
+	<img id="americanExpress" src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/30/American_Express_logo.svg/2000px-American_Express_logo.svg.png" width="40" height="30" style="visibility:hidden"/>
+	<img id="discover" src="http://www.credit-card-logos.com/images/discover_credit-card-logos/discover_network2.jpg" width="40" height="30" style="visibility:hidden"/>
+	<img id="diners" align="top" src="http://www.dinersclub.com.au/css/images/DC-international.png" width="40" height="30" style="visibility:hidden"/>
+	<img id="visaElectron" src="https://upload.wikimedia.org/wikipedia/en/thumb/0/02/Visa_Electron.svg/1280px-Visa_Electron.svg.png" width="40" height="30" style="visibility:hidden"/>
+	<br>
+	<h3 id="card"></h3>
+</body>
+</html> 

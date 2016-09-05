@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>JavScript Type Conversion</title>
+
+<script type="text/javascript">
+function ConvertToBinary()
+{
+	var numberValue = document.getElementById('NumberInput').value;
+	var decNumber = Number(numberValue);
+	if(isNaN(decNumber) || decNumber == null || numberValue == "")
+	{
+		alert("Enter a valid Decimal Number");
+		location.reload();
+		return false;
+	}
+	else
+	{
+		var binaryNumber = decNumber.toString(2).toUpperCase();
+		document.getElementById('Result').value = binaryNumber;
+	}
+}
+function ConvertToHexadecimal()
+{
+    var numberValue = document.getElementById('NumberInput').value;
+    var decNumber = Number(numberValue);
+    if(isNaN(decNumber) || decNumber == null || numberValue == "")
+	{
+		alert("Enter a valid Decimal Number");
+		location.reload();
+		return false;
+	}
+    else
+    {
+    	var hexNumber = decNumber.toString(16).toUpperCase();
+    	document.getElementById('Result').value = hexNumber;
+    }
+  }
+function ConvertToOctal()
+{
+    var numberValue = document.getElementById('NumberInput').value;
+    var decNumber = Number(numberValue);
+    if(isNaN(decNumber) || decNumber == null || numberValue == "")
+	{
+		alert("Enter a valid Decimal Number");
+		location.reload();
+		return false;
+	}
+    else
+    {
+    	var octalNumber = decNumber.toString(8).toUpperCase();
+    	document.getElementById('Result').value = octalNumber;
+    }
+}
+</script>
+
+<body> 
+<h1>JavaScript Type Conversion</h1>
+<h3><p>Enter decimal number and get its corresponding Binary, Hexadecimal and Octal number.</p></h3>
+
+<div>
+Number: <input type="text" id="NumberInput" placeholder="Decimal Number"></input><br>
+Result: <input type="text" id="Result" placeholder="Result"></input>
+<br><br>
+<button style = "font-size: 16px" onclick="ConvertToBinary();">Convert To Binary</button><br><br>
+<button style = "font-size: 16px" onclick="ConvertToHexadecimal();">Convert To Hexadecimal</button><br><br>
+<button style = "font-size: 16px" onclick="ConvertToOctal();">Convert To Octal</button><br><br>
+<br>
+</div>
+
+</body>
+</html>
