@@ -2,9 +2,38 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
-</head>
-<body>
+<title>HTML5 Media(Video and Audio)</title>
 
+<script>
+	var video = document.getElementsByTagName("video")[0];
+</script>
+</head>
+
+<body>
+	<div id="main_div" align="center">
+	<h1>HTML5 Media(Video and Audio)</h1>
+	
+	<h3>Click to here the Audio</h3>
+	<audio controls>
+		<source src = "http://www.html5tutorial.info/media/vincent.mp3" type = "audio/mp3" ></source>
+	</audio>
+	<br/>
+	<br/>
+	
+	<h3>Trailer of Big Buck Bunny</h3>
+	<div id="video">
+	<video controls width="640" height="480" >
+		<source src = "http://clips.vorwaerts-gmbh.de/big_buck_bunny.mp4" type = "video/mp4" ></source>
+	</video>
+	<br>
+	
+	<input type="button" style = "font-size: 20px" value="Play" onclick="video.play()"/> 
+	<input type="button" style = "font-size: 20px" value="Pause" onclick="video.pause()"/> 
+	<input type="button" style = "font-size: 20px" value="Mute" onclick="video.muted = true"/> 
+	<input type="button" style = "font-size: 20px" value="Unmute" onClick="video.muted = false"/>
+	
+	</div>		
+		
+	</div>
 </body>
 </html>
