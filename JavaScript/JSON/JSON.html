@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<script type=text/javascript>
+
+var data = { "professors":[
+                      {
+                    	  "Name":"Name : Xiao Su",
+                          "Designation":"Designation : Professor, Department Chair",
+                          "Contact":"Contact Information : chair-computer-engineering@sjsu.edu",
+						  "Location":"Location : ENG 284A"
+                      },
+                      
+                      {
+                    	  "Name":"Name : Dan Harkey",
+                          "Designation":"Designation : Lecturer, MSSE Advisor",
+                          "Contact":"Contact Information : dan.harkey@sjsu.edu",
+						  "Location":"Location : ENG 283D"
+                      },
+                      
+                      {
+                    	  "Name":"Name : Donald Hung",
+                          "Designation":"Designation : Professor, MSCMPE Advisor",
+                          "Contact":"Contact Information : donald.hung@sjsu.edu",
+						  "Location":"Location : ENG 283A"
+                      },
+                      
+                      {
+                    	  "Name":"Name : Simon Shim",
+                          "Designation":"Designation : Professor",
+                          "Contact":"Contact Information : simon.shim@sjsu.edu",
+						  "Location":"Location : ENG 269"
+                      },
+                      
+                      {
+                    	  "Name":"Name : Shai Silberman",
+                          "Designation":"Designation : Lecturer, Director of Network Services",
+                          "Contact":"shai.silberman@sjsu.edu",
+						  "Location":"Location : CC 208A"
+                      }
+           ]}
+
+function details()
+{
+	var professor = document.getElementById("prof").value;
+	if(professor == "Xiao Su")
+	{
+		document.getElementById("information").innerHTML = data.professors[0].Name + "<br><br>" + data.professors[0].Designation + "<br><br>" + data.professors[0].Contact + "<br><br>" + data.professors[0].Location;
+	}
+	
+	else if(professor === "Dan Harkey")
+	{
+		document.getElementById("information").innerHTML = data.professors[1].Name + "<br><br>" + data.professors[1].Designation + "<br><br>" + data.professors[1].Contact + "<br><br>" + data.professors[1].Location;
+	}
+	
+	else if(professor === "Donald Hung")
+	{
+		document.getElementById("information").innerHTML = data.professors[2].Name + "<br><br>" + data.professors[2].Designation + "<br><br>" + data.professors[2].Contact + "<br><br>" + data.professors[2].Location;
+	}
+	
+	else if(professor === "Simon Shim")
+	{
+		document.getElementById("information").innerHTML = data.professors[3].Name + "<br><br>" + data.professors[3].Designation + "<br><br>" + data.professors[3].Contact + "<br><br>" + data.professors[3].Location;
+	}
+	
+	else if(professor === "Shai Silberman")
+	{
+		document.getElementById("information").innerHTML = data.professors[4].Name + "<br><br>" + data.professors[4].Designation + "<br><br>" + data.professors[4].Contact + "<br><br>" + data.professors[4].Location;
+	}
+	else
+	{
+		alert("Select some input");
+	}
+
+}
+
+</script>
+
+</head>
+<body>
+
+<form>
+<h1>JavaScript JSON</h1>
+<h3><p>Select the Professor to get their details.</p></h3>
+<select id = "prof">
+	<option value=""> - Select - </option>
+	<option value="Xiao Su">Xiao Su</option>
+  	<option value="Dan Harkey">Dan Harkey</option>
+  	<option value="Donald Hung">Donald Hung</option>
+  	<option value="Simon Shim">Simon Shim</option>
+  	<option value="Shai Silberman">Shai Silberman</option>
+</select>
+<br><br>
+<input type="button" style = "font-size: 1.5em" onclick="details()" value="Get Information">
+</form>
+
+<p id = information></p>
+
+</body>
+</html>
