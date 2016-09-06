@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>HTML5 Local Storage</title>
+
+<script>
+
+function SetData()
+{
+	var name = document.myForm.Name.value;
+	var age = document.myForm.Age.value;
+	var nameValidation = new RegExp("[a-zA-Z\-'\s]+");
+	if(name.match(nameValidation) != name || name == null || name == "" || isNaN(age) || age == null || age == "")
+	{
+		alert("Enter a valid input");
+		location.reload();
+		return false;
+	}
+	else
+	{
+		localStorage.firstname = name;
+		localStorage.userAge = age;
+	}
+}
+
+function GetData() 
+{
+	document.getElementById("name").innerHTML = "Your Name is : " + localStorage.firstname;
+	document.getElementById("age").innerHTML = "Your Age is : " + localStorage.userAge;
+
+}
+
+</script>
+</head>
+<body>
+
+<h1>HTML5 Local Storage</h1>
+<form name = "myForm">
+<p>Enter your Name : <input type ="text" name = "Name" placeholder ="Name" id="N"></p>
+<p>Enter your Age : <input type ="text" name = "Age" placeholder ="Age" id="A"></p>
+<input type="submit" style = "font-size: 16px" value="Set Data" onclick="SetData()" />
+<input type="button" style = "font-size: 16px" id="getData" value="Get Data" onclick="GetData()" />
+<br>
+</form>
+<p id ="name"></p>
+<p id ="age"></p>
+</body>
+</html>
