@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>HTML5 Geolocation</title>
+
+<script type="text/javascript">
+var x = document.getElementById("geolocationDetails");
+
+function getLocation() 
+{
+    if (navigator.geolocation) 
+    {
+        navigator.geolocation.watchPosition(showPosition);
+    }
+    else 
+    { 
+        x.innerHTML = "Geolocation is not supported by your browser.";
+    }
+}
+
+function showPosition(position) 
+{
+	document.getElementById("info").innerHTML = "Latitude: " + position.coords.latitude + 
+    "<br>Longitude: " + position.coords.longitude + "<br>Accuracy : " + position.coords.accuracy;
+   	
+    
+    var mix=position.coords.latitude+","+position.coords.longitude;
+    
+	var image = "http://maps.googleapis.com/maps/api/staticmap?center="
+	    +mix+"&zoom=14&size=400x300&sensor=false";
+	
+	document.getElementById("map").innerHTML = "<img src='"+image+"'>";
+}
+
+</script>
+</head>
+
+<style>
+h1,h3 
+{
+    margin-left: 40px;
+} 
+
+button
+{
+	margin-left: 5px;
+	margin-right: 5px;
+}
+</style>
+
+<body>
+
+<div align="center">
+<h1>HTML Geolocation</h1>
+<h3><p>Click here to know your location</p></h3>
+
+<button style="font-size:16px" onclick="getLocation()">Get Location</button>
+
+<p id="geolocationDetails"></p>
+<p id="info"></p>
+<p id="map"></p>
+</div>
+</body>
+</html>
