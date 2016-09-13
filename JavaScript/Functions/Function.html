@@ -9,7 +9,7 @@ function calculate() {
 	var amount;
 	var unit = document.getElementById("U").value;
 	
-	  if(isNaN(unit) || unit == null || unit == "")
+	  if(isNaN(unit) || unit == null || unit == "" || unit < 0)
       {
    	      alert("Enter a valid input");
  		  location.reload();
@@ -56,7 +56,6 @@ function calculate() {
 </script>
 </head>
 <body>
-
 	<h1> This is an example of Electricity Bill Calculator using JavaScript Functions</h1>
 	<p>Enter the number of units used : <input type ="text" placeholder ="Units" id="U"></p>
 	<input type="button" value="Calculate" onclick="calculate();" />

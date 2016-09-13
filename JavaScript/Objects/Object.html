@@ -22,8 +22,8 @@ function circle(radius)
 function calculate()
 {
 	var radius = document.getElementById("R").value;
-	var c = new circle(radius);
-	if(isNaN(radius) || radius == null || radius == "")
+	var Circle = new circle(radius);
+	if(isNaN(radius) || radius == null || radius == "" || radius < 0)
 	{
 		alert("Enter a valid input");
 		location.reload();
@@ -31,8 +31,8 @@ function calculate()
 	}
 	else
 	{
-		document.getElementById("area").innerHTML = "The area of the circle is " +c.area().toFixed(2) ; 
-		document.getElementById("perimeter").innerHTML = "The perimeter of the circle is " +c.perimeter().toFixed(2) ;
+		document.getElementById("area").innerHTML = "The area of the circle is " + Circle.area().toFixed(2) ; 
+		document.getElementById("perimeter").innerHTML = "The perimeter of the circle is " + Circle.perimeter().toFixed(2) ;
 	}
 } 
 </script>

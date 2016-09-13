@@ -44,8 +44,7 @@ var data = { "professors":[
            ]}
 
 function details()
-{
-	
+{	
 	var professor = document.getElementById("prof").value;
 	if(professor == "Xiao Su")
 	{
@@ -77,14 +76,12 @@ function details()
 		location.reload();
 		return false;
 	}
-
 }
 
 </script>
-
 </head>
-<body>
 
+<body>
 <form>
 <h1>JavaScript JSON</h1>
 <h3><p>Select the Professor to get their details.</p></h3>
@@ -99,8 +96,6 @@ function details()
 <br><br>
 <input type="button" style = "font-size: 1.5em" onclick="details()" value="Get Information">
 </form>
-
 <p id = information></p>
-
 </body>
 </html>

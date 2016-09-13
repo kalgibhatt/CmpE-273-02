@@ -9,7 +9,7 @@ function ConvertToBinary()
 {
 	var numberValue = document.getElementById('NumberInput').value;
 	var decNumber = Number(numberValue);
-	if(isNaN(decNumber) || decNumber == null || numberValue == "")
+	if(isNaN(decNumber) || decNumber == null || numberValue == "" || numberValue < 0)
 	{
 		alert("Enter a valid Decimal Number");
 		location.reload();
@@ -25,7 +25,7 @@ function ConvertToHexadecimal()
 {
     var numberValue = document.getElementById('NumberInput').value;
     var decNumber = Number(numberValue);
-    if(isNaN(decNumber) || decNumber == null || numberValue == "")
+    if(isNaN(decNumber) || decNumber == null || numberValue == "" || numberValue < 0)
 	{
 		alert("Enter a valid Decimal Number");
 		location.reload();
@@ -41,7 +41,7 @@ function ConvertToOctal()
 {
     var numberValue = document.getElementById('NumberInput').value;
     var decNumber = Number(numberValue);
-    if(isNaN(decNumber) || decNumber == null || numberValue == "")
+    if(isNaN(decNumber) || decNumber == null || numberValue == "" || numberValue < 0)
 	{
 		alert("Enter a valid Decimal Number");
 		location.reload();

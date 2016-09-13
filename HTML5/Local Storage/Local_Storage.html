@@ -11,7 +11,7 @@ function SetData()
 	var name = document.myForm.Name.value;
 	var age = document.myForm.Age.value;
 	var nameValidation = new RegExp("[a-zA-Z\-'\s]+");
-	if(name.match(nameValidation) != name || name == null || name == "" || isNaN(age) || age == null || age == "")
+	if(name.match(nameValidation) != name || name == null || name == "" || isNaN(age) || age == null || age == "" || age <= 0)
 	{
 		alert("Enter a valid input");
 		location.reload();
