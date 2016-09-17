@@ -25,7 +25,13 @@ function calculate()
 	var Circle = new circle(radius);
 	if(isNaN(radius) || radius == null || radius == "" || radius < 0)
 	{
-		alert("Enter a valid input");
+		alert("Enter a valid radius value");
+		location.reload();
+		return false;
+	}
+	else if(radius == 0)
+	{
+		alert("This will not be a circle. Enter a non-zero value.");
 		location.reload();
 		return false;
 	}
@@ -37,12 +43,12 @@ function calculate()
 } 
 </script>
 </head>  
-<body>  
+<body style="background-color:#FFFFE0">  
 	<h1> This is an example of Area and Perimeter Calculator using JavaScript Objects</h1>
-	<p>Enter the radius of the circle : <input type ="text" placeholder ="Radius of circle" id="R"></p>
-	<input type="button" value="Calculate" onclick="calculate();" />
+	<h2><p>Enter the radius of the circle : <input type ="text" placeholder ="Radius of circle" id="R" style ="border: 2px solid black;border-radius: 4px;height:20px;font-size:20px;"/></p></h2>
+	<input type="button" value="Calculate" onclick="calculate();" style= "background-color: #267012;font-size: 1.5em;color:white;" />
 	<br>
-	<p id="area"></p>
-	<p id="perimeter"></p>
+	<h3><p id="area"></p></h3>
+	<h3><p id="perimeter"></p></h3>
 </body>  
 </html>  

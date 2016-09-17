@@ -11,7 +11,7 @@ function calculate() {
 	
 	  if(isNaN(unit) || unit == null || unit == "" || unit < 0)
       {
-   	      alert("Enter a valid input");
+   	      alert("Enter valid number of units");
  		  location.reload();
  		  return false;   
       }
@@ -20,31 +20,26 @@ function calculate() {
           amount=1.5*unit;
           document.getElementById("amount").innerHTML = "Electricity Bill to be paid: $" +amount ; 
       }
-
       else if (unit>50 && unit<100)
       {
           amount=2*unit;
           document.getElementById("amount").innerHTML = "Electricity Bill to be paid: $" +amount ; 
       }
-
       else if (unit>=100 && unit<200)
       {
           amount=2.8*unit;
           document.getElementById("amount").innerHTML = "Electricity Bill to be paid: $" +amount ;    
       }
-
       else if (unit>=200 && unit<300)
       {
           amount=3.5*unit;
           document.getElementById("amount").innerHTML = "Electricity Bill to be paid: $" +amount ;   
       }
-
       else if (unit>=300)
       {
           amount=4.5*unit;
           document.getElementById("amount").innerHTML = "Electricity Bill to be paid: $" +amount ;   
       }
-
       else
       {
     	  alert("Enter a valid input");
@@ -55,11 +50,11 @@ function calculate() {
 
 </script>
 </head>
-<body>
+<body style="background-color:#FFFFE0">
 	<h1> This is an example of Electricity Bill Calculator using JavaScript Functions</h1>
-	<p>Enter the number of units used : <input type ="text" placeholder ="Units" id="U"></p>
-	<input type="button" value="Calculate" onclick="calculate();" />
+	<h2>Enter the number of units used : <input type ="text" placeholder ="Units" id="U" style ="border: 2px solid black;border-radius: 4px;height:20px;font-size:20px;"/></h2>
+	<input type="button" value="Calculate" onclick="calculate();" style= "background-color: #267012;font-size: 1.5em;color:white;" />
 	<br>
-	<p id="amount"></p>
+	<h3 id="amount"></h3>
 </body>
 </html>

@@ -11,9 +11,15 @@ function SetData()
 	var name = document.myForm.Name.value;
 	var age = document.myForm.Age.value;
 	var nameValidation = new RegExp("[a-zA-Z\-'\s]+");
-	if(name.match(nameValidation) != name || name == null || name == "" || isNaN(age) || age == null || age == "" || age <= 0)
+	if(name.match(nameValidation) != name || name == null || name == "")
 	{
-		alert("Enter a valid input");
+		alert("Enter a valid name");
+		location.reload();
+		return false;
+	}
+	else if(isNaN(age) || age == null || age == "" || age <= 0)
+	{
+		alert("Enter a valid age");
 		location.reload();
 		return false;
 	}
@@ -34,16 +40,16 @@ function GetData()
 </script>
 </head>
 
-<body>
+<body style="background-color:#FFFFE0">
 <h1>HTML5 Local Storage</h1>
 <form name = "myForm">
-<p>Enter your Name : <input type ="text" name = "Name" placeholder ="Name" id="N"></p>
-<p>Enter your Age : <input type ="text" name = "Age" placeholder ="Age" id="A"></p>
-<input type="submit" style = "font-size: 16px" value="Set Data" onclick="SetData()" />
-<input type="button" style = "font-size: 16px" id="getData" value="Get Data" onclick="GetData()" />
+<p><h2>Enter your Name : <input type ="text" name = "Name" placeholder ="Name" id="N" style ="border: 2px solid black;border-radius: 4px;height:20px;font-size:20px;"/></h2>
+<p><h2>Enter your Age : <input type ="text" name = "Age" placeholder ="Age" id="A" style ="border: 2px solid black;border-radius: 4px;height:20px;font-size:20px;"/></h2>
+<input type="submit" value="Set Data" onclick="SetData()" style= "background-color: #267012;font-size: 1.5em;color:white;" />
+<input type="button" id="getData" value="Get Data" onclick="GetData()" style= "background-color: #267012;font-size: 1.5em;color:white;" />
 <br>
 </form>
-<p id ="name"></p>
-<p id ="age"></p>
+<h3><p id ="name"></p></h3>
+<h3><p id ="age"></p></h3>
 </body>
 </html>

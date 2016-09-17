@@ -81,11 +81,11 @@ function details()
 </script>
 </head>
 
-<body>
+<body style="background-color:#FFFFE0">
 <form>
 <h1>JavaScript JSON</h1>
-<h3><p>Select the Professor to get their details.</p></h3>
-<select id = "prof">
+<h2><p>Select the Professor to get their details.</p></h2>
+<select id = "prof" style ="border: 2px solid black;border-radius: 4px;height:30px;font-size:20px;"/>
 	<option value=""> - Select - </option>
 	<option value="Xiao Su">Xiao Su</option>
   	<option value="Dan Harkey">Dan Harkey</option>
@@ -94,8 +94,8 @@ function details()
   	<option value="Shai Silberman">Shai Silberman</option>
 </select>
 <br><br>
-<input type="button" style = "font-size: 1.5em" onclick="details()" value="Get Information">
+<input type="button" onclick="details()" value="Get Information" style= "background-color: #267012;font-size: 1.5em;color:white;" />
 </form>
-<p id = information></p>
+<h3><p id = information></p></h3>
 </body>
 </html>

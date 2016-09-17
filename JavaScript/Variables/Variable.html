@@ -9,7 +9,7 @@
 		var celsius = document.getElementById("C").value;
 		if(isNaN(celsius) || celsius == null || celsius == "")
 		{
-			alert("Enter a valid input");
+			alert("Enter a valid temperature");
 			location.reload();
 			return false;
 		}
@@ -26,7 +26,7 @@
 		var fahrenheit = document.getElementById("F").value;
 		if(isNaN(fahrenheit) || fahrenheit == null || fahrenheit == "")
 		{
-			alert("Enter a valid input");
+			alert("Enter a valid temperature");
 			location.reload();
 			return false;
 		}
@@ -37,22 +37,21 @@
 			document.getElementById("c2f").innerHTML = "";
 		}
 		document.getElementById("C").value = "";
-	}
-	
+	}	
 </script>
 </head>
-<body>
+<body style="background-color:#FFFFE0">
 
 	<h1> This is an example of Temperature Converter using JavaScript Variables</h1>
-	<p>Enter the Celsius temperature here : <input type ="text" placeholder ="Celsius temperature" id="C"></p>
-	<input type="button" value="Convert" onclick="c2f();" />
+	<h2><p>Enter the Celsius temperature here : <input type ="text" placeholder ="Celsius temperature" id="C" style ="border: 2px solid black;border-radius: 4px;height:20px;font-size:20px;"/></p></h2>
+	<input type="button" value="Convert" onclick="c2f();" style= "background-color: #267012;font-size: 1.5em;color:white;" />
 	<br>
-	<p id="c2f"></p>
+	<h3><p id="c2f"></p></h3>
 
-	<p>Enter the Fahrenheit temperature here : <input type ="text" placeholder ="Fahrenheit temperature" id="F"></p>
-	<input type="button" value="Convert" onclick="f2c();" />
+	<h2><p>Enter the Fahrenheit temperature here : <input type ="text" placeholder ="Fahrenheit temperature" id="F" style ="border: 2px solid black;border-radius: 4px;height:20px;font-size:20px;"/></p></h2>
+	<input type="button" value="Convert" onclick="f2c();" style= "background-color: #267012;font-size: 1.5em;color:white;" />
 	<br>
-	<p id="f2c"></p>
+	<h3><p id="f2c"></p></h3>
 
 </body>
 </html>
