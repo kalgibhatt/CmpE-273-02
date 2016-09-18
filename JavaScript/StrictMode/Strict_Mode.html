@@ -8,18 +8,25 @@
 "use strict";
 function convert()
 {
-	numberValue = document.getElementById('NumberInput').value;
-	if(isNaN(numberValue) || numberValue == null || numberValue == "")
-	{
-		alert("Enter a valid Number");
-		location.reload();
-		return false;
+	try
+   	{
+		numberValue = document.getElementById('NumberInput').value;
+		if(isNaN(numberValue) || numberValue == null || numberValue == "")
+		{
+			alert("Enter a valid number");
+			location.reload();
+			return false;
+		}
+		else
+		{
+			result = Math.cos(numberValue);
+			document.getElementById('Result').value = result;
+		}
 	}
-	else
-	{
-		result = Math.cos(numberValue);
-		document.getElementById('Result').value = result;
-	}
+   	catch(err)
+   	{
+   		document.getElementById("demo").innerHTML = "Error : "+err;
+   	}
 }   
 </script>
 </head>
@@ -33,7 +40,9 @@ function convert()
 	<h2>Number: <input type="text" id="NumberInput" placeholder="Number" style ="border: 2px solid black;border-radius: 4px;height:20px;font-size:20px;"/></input><br></h2>
 	<h2>Result: <input type="text" id="Result" placeholder="Cosine Value" style ="border: 2px solid black;border-radius: 4px;height:20px;font-size:20px;"/></input><br></h2>
 	<br>
-	<input type="button" value="Convert" onclick="convert();" style= "background-color: #267012;font-size: 1.5em;color:white;" />	
+	<input type="button" value="Convert" onclick="convert();" style= "background-color: #267012;font-size: 1.5em;color:white;" />
+	<h3><p id="demo"></p></h3>
+    <h3><p id='result'></p></h3> 	
 	</div>
 </body>
 </html>
