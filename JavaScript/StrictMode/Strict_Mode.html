@@ -5,43 +5,35 @@
 <title>JavaScript Strict Mode</title>
 
 <script type="text/javascript">
-
-function reset() 
-{    
-	document.getElementById("value1").value = "";
-	document.getElementById("displayresult").value=" ";
-}
-
 "use strict";
-function stricttest()
+function convert()
 {
-	testdata = document.getElementById("value1");
-	//alert("Strict mode declared, Kindly Declare the variable.");
-}
-   
+	numberValue = document.getElementById('NumberInput').value;
+	if(isNaN(numberValue) || numberValue == null || numberValue == "")
+	{
+		alert("Enter a valid Number");
+		location.reload();
+		return false;
+	}
+	else
+	{
+		result = Math.cos(numberValue);
+		document.getElementById('Result').value = result;
+	}
+}   
 </script>
 </head>
 
-<style>
-h1,h3 {
-    color: #2E3884;
-    margin-left: 40px;
-} 
+<body style="background-color:#FFFFE0">
 
-button{
-	margin-left: 5px;
-	margin-right: 5px;
-}
-</style>
-
-<body>
-<div align = "Center">
-<h1>Javascript Strict Mode</h1>
-Enter a value:
- <input type="text" name="value1" id="value1"><br>
-<br><input type="button" name="clickbtn" value="Submit" onclick="stricttest()">
-<input type="button" name="clickbtn" value="Reset" onclick="reset()">
-</div>
+	<h1>JavaScript Strict Mode</h1>
+	<h3>Enter a number to get its cosine value.</h3>
+	
+	<div>
+	<h2>Number: <input type="text" id="NumberInput" placeholder="Number" style ="border: 2px solid black;border-radius: 4px;height:20px;font-size:20px;"/></input><br></h2>
+	<h2>Result: <input type="text" id="Result" placeholder="Cosine Value" style ="border: 2px solid black;border-radius: 4px;height:20px;font-size:20px;"/></input><br></h2>
+	<br>
+	<input type="button" value="Convert" onclick="convert();" style= "background-color: #267012;font-size: 1.5em;color:white;" />	
+	</div>
 </body>
-
 </html>
